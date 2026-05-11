@@ -14,29 +14,29 @@ int main() {
     int N;
     
     scanf("%d", &N);
-    int degrees[N];
+    int degree[N];
     
     for (int i = 0; i < N; i++) {
-        degrees[i] = 0;
+        degree[i] = 0;
     }
 
     for (int i = 0; i < N; i++) {
         for (int j = 0; j < N; j++) {
             int val;
             scanf("%d", &val);
-            degrees[i] += val; 
+            degree[i] += val; 
         }
     }
 
     for (int i = 0; i < N; i++) {
-        printf("DEGREE %d %d\n", i, degrees[i]);
+        printf("DEGREE %d %d\n", i, degree[i]);
     }
 
     int max_deg = -1;
     int max_vertex = -1;
     for (int i = 0; i < N; i++) {
-        if (degrees[i] >= max_deg) { 
-            max_deg = degrees[i];
+        if (degree[i] >= max_deg) { 
+            max_deg = degree[i];
             max_vertex = i;
         }
     }
@@ -45,7 +45,7 @@ int main() {
     printf("ISOLATED");
     int count = 0;
     for (int i = 0; i < N; i++) {
-        if (degrees[i] == 0) {
+        if (degree[i] == 0) {
             printf(" %d", i);
             count++;
         }
