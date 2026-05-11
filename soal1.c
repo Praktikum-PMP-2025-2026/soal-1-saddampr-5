@@ -12,9 +12,10 @@
 
 int main() {
     int N;
-    scanf("%d", &N);
     
+    scanf("%d", &N);
     int degrees[N];
+    
     for (int i = 0; i < N; i++) {
         degrees[i] = 0;
     }
@@ -34,7 +35,7 @@ int main() {
     int max_deg = -1;
     int max_vertex = -1;
     for (int i = 0; i < N; i++) {
-        if (degrees[i] >=  max_deg) {  
+        if (degrees[i] >= max_deg) { 
             max_deg = degrees[i];
             max_vertex = i;
         }
@@ -46,8 +47,12 @@ int main() {
     for (int i = 0; i < N; i++) {
         if (degrees[i] == 0) {
             printf(" %d", i);
-            count ++;
+            count++;
         }
+    }
+    
+    if (count == 0) {
+        printf(" NONE");
     }
     printf("\n");
 
