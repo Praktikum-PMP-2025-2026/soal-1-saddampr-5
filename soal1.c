@@ -34,7 +34,7 @@ int main() {
     int max_deg = -1;
     int max_vertex = -1;
     for (int i = 0; i < N; i++) {
-        if (degrees[i] >= max_deg) {  
+        if (degrees[i] >=  max_deg) {  
             max_deg = degrees[i];
             max_vertex = i;
         }
@@ -42,9 +42,11 @@ int main() {
     printf("MAX_VERTEX %d\n", max_vertex);
 
     printf("ISOLATED");
+    int count = 0;
     for (int i = 0; i < N; i++) {
         if (degrees[i] == 0) {
             printf(" %d", i);
+            count ++;
         }
     }
     printf("\n");
