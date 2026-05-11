@@ -35,7 +35,7 @@ int main() {
     int max_deg = -1;
     int max_vertex = -1;
     for (int i = 0; i < N; i++) {
-        if (degree[i] >= max_deg) { 
+        if (degree[i] > max_deg) { 
             max_deg = degree[i];
             max_vertex = i;
         }
