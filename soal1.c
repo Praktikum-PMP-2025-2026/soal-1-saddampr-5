@@ -7,62 +7,49 @@
  * 
  */
 
- #include <stdio.h>
- #include <stdlib.h>
+#include <stdio.h>
 
- int main (){
-    int vertex;
-
-    scanf("%d",&vertex);
-    int degrees[vertex];
-
-    for (int i =0; i < vertex; i++){
+int main() {
+    int N;
+    scanf("%d", &N);
+    
+    int degrees[N];
+    for (int i = 0; i < N; i++) {
         degrees[i] = 0;
     }
 
-    for(int i=0; i< vertex; i++){
-        for(int j=0; j <vertex; j++){
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j < N; j++) {
             int val;
-            scanf("%d",&val);
-            degrees[i] = degrees[i] + val ;
+            scanf("%d", &val);
+            degrees[i] += val; 
         }
     }
 
-    for(int i=0; i < vertex; i++){
-        printf("DEGREE %d %d\n",i, degrees[i]);
+    for (int i = 0; i < N; i++) {
+        printf("DEGREE %d %d\n", i, degrees[i]);
     }
 
     int max_deg = -1;
     int max_vertex = -1;
-
-    for (int i = 0;i<vertex; i++){
-        if(degrees[i] >= max_deg){
+    for (int i = 0; i < N; i++) {
+        if (degrees[i] >= max_deg) {  
             max_deg = degrees[i];
             max_vertex = i;
         }
     }
+    printf("MAX_VERTEX %d\n", max_vertex);
 
-    printf ("MAX_VERTEX %d\n", max_vertex);
-
-    printf ("ISOLATED");
-    for (int i=0; i<vertex ;i++){
-        if(degrees[i] = 0){
-            printf("%d", i);
+    printf("ISOLATED");
+    for (int i = 0; i < N; i++) {
+        if (degrees[i] == 0) {
+            printf(" %d", i);
         }
     }
-
     printf("\n");
 
     return 0;
-
-
-
-
-
-
-    
-
-
+}
 
 
 
